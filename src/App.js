@@ -11,6 +11,7 @@ import Fashion from './pages/Fashion';
 import Home from './pages/Home'
 import Login from './pages/Login';
 import VillageMarket from './pages/VillageMarket';
+import Cart from './pages/Cart';
 
 const Container = styled.div`
   
@@ -39,6 +40,7 @@ const App = () => {
               <Route path='/villagemarket' element={<VillageMarket />} />
               <Route path='/fashion' element={<Fashion />} />
               <Route path='/electronics' element={<Electronics />} />
+              <Route path='/cart' element={<Cart />} />
             </Routes>
           </Wrapper>
           <RightSide />

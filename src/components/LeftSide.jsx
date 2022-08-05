@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShirt,faTv,faMobile,faHighlighter,faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
 const Container = styled.section`
-  flex: 1.5;
+  flex: 1;
   height: 100vh;
   background-color: #f1f1f1;
   z-index:9999;
@@ -16,8 +16,8 @@ const Container = styled.section`
    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 `
 const Wrapper = styled.div`
-    width:95%;
-    padding:30px;
+    width:100%;
+    padding:30px 0px;
    
 `
 const List = styled.ul`

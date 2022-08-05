@@ -83,6 +83,7 @@ const Button = styled.button`
 const CartContainer =styled.div`
     display: flex;
     position:relative;
+    
 `
 const Cart = styled.span`
    position:absolute;
@@ -137,11 +138,12 @@ const Header = () => {
         </Link>
        
       </Login>
+      <Link to ='/cart' style={{textDecoration:'none',color:'inherit',cursor:'pointer'}}>
       <CartContainer>
        <ShoppingCartIcon style={{fontSize:'30px'}} />
         <Cart>09</Cart>
       </CartContainer>
-
+      </Link>
     </User>
     <Hamburger onClick={()=>(setMobileNav(!mobileNav))}>
       { mobileNav ? <> <CloseIcon style={{fontSize:'30px'}}/></>  : <><MenuIcon style={{fontSize:'40px'}}/></>}

@@ -9,7 +9,8 @@ const Container = styled.section`
 `
 const RightSide = () => {
   return (
-    <Container>RightSide</Container>
+    <Container>
+    </Container>
   )
 }
 
