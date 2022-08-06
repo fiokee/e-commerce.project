@@ -101,7 +101,7 @@ const Hamburger= styled.div`
     display: none;
     ${tablet({display:'flex'})}
 `
-const Header = () => {
+const Header = ()=> {
     const [mobileNav,setMobileNav] = React.useState(false)
   return (
     <Container>
