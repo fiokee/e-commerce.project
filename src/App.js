@@ -12,17 +12,23 @@ import Home from './pages/Home'
 import Login from './pages/Login';
 import VillageMarket from './pages/VillageMarket';
 import Cart from './pages/Cart';
+ import {tablet} from './Responsive'
 
 const Container = styled.div`
   
 `
 const Wrapper = styled.div`
   flex: 5;
+
 `
 const Main = styled.main`
   display: flex;
-  height: 100vh;
+  position:relative;
+  height: auto;
   z-index: 0;
+  ${tablet({  
+    flexDirection: 'column'
+})}
 `
 const App = () => {
   return (

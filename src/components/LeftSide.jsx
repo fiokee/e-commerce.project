@@ -4,16 +4,26 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import {NavLink} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShirt,faTv,faMobile,faHighlighter,faCartShopping } from "@fortawesome/free-solid-svg-icons"
-
+import { lapTop, tablet } from '../Responsive';
 const Container = styled.section`
   flex: 1;
-  height: 100vh;
+  height: auto;
   background-color: #f1f1f1;
   z-index:9999;
   padding: 0 24px;
   margin: 0 auto;
+  position: sticky;
+  top:0;
+ 
   /* background-color:#fff; */
    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+   ${tablet({ 
+    dispaly:'none', 
+    backgroundColor: 'red',
+})};
+${lapTop({  
+  display: 'none',
+})};
 `
 const Wrapper = styled.div`
     width:100%;
@@ -29,7 +39,7 @@ const List = styled.ul`
 `
 const ListItems = styled.li`
     color: #111;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     margin-top:20px;
     &:hover{

@@ -1,134 +1,189 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GooglePlus from '@mui/icons-material/Google';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import {Link} from 'react-router-dom'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import {mobile,tablet,lapTop} from '../Responsive'
 
-export const Box = styled.div`
-  padding: 80px 60px;
-  background: #000;
-  position: relative;
-  margin-top: 300px;
-  bottom: 0;
-  width: 100%;
-  
-   
-  @media (max-width: 1000px) {
-    padding: 70px 30px;
+const FooterContainer = styled.div`
+  background-color:#684993;
+  min-height: 300px;
+  padding: 30px 24px;
+  color: #f1f1f1;
+ 
+`
+const Container =styled.div`
+display:flex;
+gap:20px;
+${tablet({
+  flexDirection:'column',
+})}
+`
+const ColumnOne = styled.div`
+flex: 1;
+display:flex;
+flex-direction: column;
+${tablet({
+  alignItems:'center',
+})}
+
+`
+const Logo =styled.h1`
+font-size: 25px;
+`
+const Text =styled.p`
+margin:20px 0;
+font-size: 16px; 
+  font-weight: 500;
+`
+const SocialContainer = styled.div`
+display: flex;
+margin: 20px 0;
+
+`
+const SocialIcon = styled.div`
+width:40px;
+height: 40px;
+background-color:#${props=>props.color};
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-right:20px;
+color:#fff;
+cursor: pointer;
+`
+const ColumnTwo= styled.div`
+flex:1;
+`
+const Title= styled.h3`
+font-size:20px;
+text-align: center;
+margin-bottom:20px;
+`
+const List= styled.ul`
+display: flex;
+align-items: center;
+flex-direction: column;
+list-style: none;
+`
+const ListItems = styled.li`
+  margin-bottom: 10px;
+  font-size: 18px; 
+  font-weight: 500;
+  &:hover{
+    color: red;
   }
-`;
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding :20px 20px;
-    margin: 20px;
+`
+const ColumnThree = styled.div`
+flex:1;
+
+`
+const Payment = styled.div`
+display:flex;
+align-items:center;
+justify-content:center;
+
+`
+const PaymentImage = styled.img`
+  width:80px;
+  height:80px;
+  cursor:pointer;
+  &:hover{
+    bacground:red;
+  }
+  
+`
+const Hr = styled.hr`
+ border: 1px solid #f1f1f1;
+`
+const AllRight = styled.div`
+  font-size: 16px;
+  font-weight:400;
+  text-align:center;
 `
 
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-left: 100px;
-  width: 100%
-`;
 
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 
-                         minmax(185px, 1fr));
-  grid-gap: 20px;
-   
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, 
-                           minmax(200px, 1fr));
-  }
-`;
-   
-export const FooterLink = styled.a`
-  color: #B2BEB5;
-  margin-bottom: 20px;
-  font-size: 18px;
-  text-decoration: none;
-   
-  &:hover {
-      color: #684993;
-      transition: 200ms ease-in;
-  }
-`;
-   
-export const Heading = styled.p`
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 40px;
-  font-weight: bold;
-`;
+ 
+
 const Footer = () => {
   return (
-    <Box>
-      <h1 style={{ color: "#fff", 
-                   textAlign: "center", 
-                   marginTop: "-50px" }}>
-        Promo Promo: Get up to
-40% OFF
-      </h1>
-    <Container>
-      <Row>
-          <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Contact Us</FooterLink>
-            <FooterLink href="#">Our Blog</FooterLink>
-            <FooterLink href="#">Terms & Conditions</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Payment</Heading>
-            <FooterLink href="#">Wallet</FooterLink>
-            <FooterLink href="#">Verve</FooterLink>
-            <FooterLink href="#">Mastercard</FooterLink>
-            <FooterLink href="#">Visa</FooterLink>
-          </Column>
-          <Column>
-            <Heading>More Info</Heading>
-            <FooterLink href="#">Site Map</FooterLink>
-            <FooterLink href="#">Track my Order</FooterLink>
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">FAQs</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
-            </FooterLink>
-          </Column>
-      
-      </Row>
-      </Container>
-      </Box>
-  )
-}
+    <FooterContainer>
+      <Container>
+      <ColumnOne>
+      <Logo>market place</Logo>
+      <Text>Lorem ipsum dolor sit amet 
+        consectetur adipisicing elit.
+         Eum inventore magnam, eveniet,
+          nemo nesciunt aliquam est pariatur,
+           voluptas ratione modi ducimus sint 
+           cupiditate nostrum libero saepe 
+           autem numquam sit placeat.
+       </Text>
+      <SocialContainer>
+        <SocialIcon color ="e4405f">
+          <InstagramIcon/>
+        </SocialIcon >
+        <SocialIcon color ="3b5999">
+          <FacebookIcon/>
+        </SocialIcon>
+        <SocialIcon color ="55acee">
+          <TwitterIcon />
+        </SocialIcon>
+        <SocialIcon color ="e60023">
+          <PinterestIcon />
+        </SocialIcon>
+        <SocialIcon color ="db4a39">
+          <GooglePlus />
+        </SocialIcon>
+      </SocialContainer>
+      </ColumnOne>
+      <ColumnTwo>
+       <Title>Quick Links</Title>
+       <List>
+         <ListItems>
+            <Link to="/"  style ={{textDecoration:"none",color:'inherit'}}>Home</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Vallage market</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Fashion</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Electtonics</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Phones</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Supermarket</Link>
+         </ListItems>
+         <ListItems>
+            <Link to="/" style ={{textDecoration:"none",color:'inherit'}}>Health & Beauty</Link>
+         </ListItems>
+      </List>
+      </ColumnTwo>
+      <ColumnThree>
+        <Title>Payment Method</Title>
+        <Payment> 
+          <PaymentImage src ='../images/visa.png'/>
+          <PaymentImage src ='../images/master.png'/>
+          <PaymentImage src ='../images/paypal.png'/>
+          <PaymentImage src ='../images/quickteller.png'/>
 
-export default Footer
+        </Payment>
+      </ColumnThree>
+      </Container>
+      <Hr/>
+      <AllRight>
+          <Text>&copy; 2022 Developed by DcodingHand. All rights reserved </Text>
+      </AllRight>
+    </FooterContainer>
+  );
+};
+
+export default Footer;
