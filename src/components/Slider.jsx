@@ -3,11 +3,19 @@ import styled from 'styled-components'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {Data }from '../rawData/data'
+import {mobile,tablet,lapTop} from '../Responsive'
 const Container = styled.div`
    width:100%;
    height: 500px;
    position: relative; 
+   ${tablet(
+
+   )};
+   ${mobile({
+    height:'200px'  
    
+})}
+
 `
 const Arrow = styled.div`
    width: 50px;
@@ -55,6 +63,9 @@ const ImageContainer = styled.div`
 const Image = styled.img`
     width:80%;
     background-color: #999;
+    ${mobile({
+        width:'60%'
+    })}
 
 `
 const Text = styled.div`
@@ -66,6 +77,10 @@ const Title = styled.h1`
     font-size:40px;
     font-weight:500;
     text-transform: uppercase;
+    ${mobile({
+        fontSize:'16px',
+        fontWeight: '300'
+    })}
 `
 const Button = styled.button`
     margin-top:40px;
@@ -77,6 +92,12 @@ const Button = styled.button`
     cursor:pointer;
     width: 180px;
     border-color: #684993;
+    ${mobile({
+        marginTop:'20px',
+        width: '100px',
+        fontSize:'16px',
+        fontWeight: '300'
+    })}
 `
 const Slider = ()=>{
     const[slideIndex,setSlideIndex]=React.useState(0)
@@ -97,7 +118,7 @@ const Slider = ()=>{
             <Wrapper slideIndex={slideIndex}>
                 {Data.map(product=>(
 
-                    <Slide>
+                    <Slide key={product.id}>
                         <ImageContainer>
                             <Image src={product.image} /> 
 

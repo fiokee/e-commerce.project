@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import {mobile,tablet} from '../Responsive'
+import {mobile,tablet,lapTop} from '../Responsive'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import {Link} from 'react-router-dom'
@@ -22,8 +22,12 @@ const Logo = styled.h1`
     font-size: 30px;
     font-weight: 500;
     color:#684993;
+    ${lapTop({
+        fontSize: ' 25px',
+        
+    })};
     ${mobile({
-        fontSize:'12px',
+        fontSize:'16px',
         fontWeight: '300'
     })}
     
@@ -35,7 +39,8 @@ ${tablet({
     height:"60vh",
     backgroundColor:"#201e1e",
     top: "6rem",
-    transition:"all .4s ease-in-out"
+    transition:"all .4s ease-in-out",
+    zIndex:"1000"
 })}
    
 `
@@ -55,10 +60,14 @@ const NavList = styled.li`
    margin: 0 20px;
    font-size: 20px;
    font-weight: 400;
+   ${lapTop({
+    marginLeft: ' 10px',
+    marginRight: ' 10px', 
+})};
    ${tablet({
         marginTop:"30px",
         color:"#fff"
-    })}
+    })};
 `
 
 const User = styled.div`
@@ -79,6 +88,10 @@ const Button = styled.button`
  background-color: transparent;
  cursor: pointer;
  font-size: 16px;
+ ${mobile({
+    fontSize:'16px',
+    fontWeight: '300'
+})}
 `
 const CartContainer =styled.div`
     display: flex;
@@ -91,6 +104,9 @@ const Cart = styled.span`
    color: #201e1e;
    right: 7px;
    font-weight: 700;
+   ${mobile({
+    fontWeight: '300'
+})}
  
 `
 const Hamburger= styled.div`
@@ -101,7 +117,7 @@ const Hamburger= styled.div`
     display: none;
     ${tablet({display:'flex'})}
 `
-const Header = () => {
+const Header = ()=> {
     const [mobileNav,setMobileNav] = React.useState(false)
   return (
     <Container>
